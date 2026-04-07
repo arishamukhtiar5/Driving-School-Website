@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Drive Master Pricing - Affordable driving lesson packages. Basic, Standard and Premium plans with transparent pricing."/>
+  <title>Pricing & Packages - Drive Master Driving School</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .pricing-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 70px;
+    }
+    .price-full-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    .price-full-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+    }
+    .price-full-card.featured-full {
+      border-color: var(--secondary);
+      box-shadow: 0 20px 60px rgba(29,53,87,0.2);
+    }
+    .price-full-card.featured-full:hover {
+      border-color: var(--primary);
+    }
+    .pfc-header {
+      padding: 36px 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+    .price-full-card:not(.featured-full) .pfc-header {
+      background: var(--light);
+    }
+    .price-full-card.featured-full .pfc-header {
+      background: linear-gradient(135deg, var(--secondary) 0%, #2a4a73 100%);
+    }
+    .pfc-popular-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pfc-icon-wrap {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      margin: 0 auto 16px;
+    }
+    .price-full-card:not(.featured-full) .pfc-icon-wrap {
+      background: rgba(230,57,70,0.1);
+    }
+    .price-full-card.featured-full .pfc-icon-wrap {
+      background: rgba(255,255,255,0.15);
+    }
+    .pfc-name {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .price-full-card:not(.featured-full) .pfc-name { color: var(--secondary); }
+    .price-full-card.featured-full .pfc-name { color: var(--white); }
+    .pfc-tagline {
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
+    .price-full-card:not(.featured-full) .pfc-tagline { color: var(--gray); }
+    .price-full-card.featured-full .pfc-tagline { color: rgba(255,255,255,0.7); }
+    .pfc-price {
+      margin-bottom: 0;
+    }
+    .pfc-price .pfc-currency {
+      font-size: 1.1rem;
+      font-weight: 600;
+      vertical-align: top;
+      line-height: 1.9;
+    }
+    .price-full-card:not(.featured-full) .pfc-currency { color: var(--primary); }
+    .price-full-card.featured-full .pfc-currency { color: var(--accent); }
+    .pfc-price .pfc-amount {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .price-full-card:not(.featured-full) .pfc-amount { color: var(--secondary); }
+    .price-full-card.featured-full .pfc-amount { color: var(--white); }
+    .pfc-body {
+      padding: 28px 32px 32px;
+    }
+    .pfc-includes-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .pfc-features-list {
+      margin-bottom: 28px;
+    }
+    .pfc-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      font-size: 0.875rem;
+      color: var(--text);
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .pfc-features-list li:last-child {
+      border-bottom: none;
+    }
+    .pfc-features-list li .pfc-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(37,204,122,0.12);
+      color: #19a35a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pfc-features-list li .pfc-x {
+      width: 20px;
+      height: 20px;
+      background: rgba(220,53,69,0.1);
+      color: #dc3545;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pfc-features-list li span.unavailable {
+      color: var(--gray);
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+    /* Compare Table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .compare-table th {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .compare-table th:first-child {
+      text-align: left;
+    }
+    .compare-table td {
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      color: var(--text);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .compare-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+    .compare-table tr:nth-child(even) td {
+      background: var(--light);
+    }
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+    .compare-table .highlight {
+      background: rgba(29,53,87,0.05) !important;
+    }
+    .compare-table .yes { color: #19a35a; font-weight: 700; font-size: 1rem; }
+    .compare-table .no { color: #dc3545; font-size: 1rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+    .faq-question:hover {
+      background: var(--light);
+    }
+    .faq-question.active {
+      background: rgba(230,57,70,0.04);
+      color: var(--primary);
+    }
+    .faq-question .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(230,57,70,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .faq-question.active .faq-icon {
+      background: var(--primary);
+      color: var(--white);
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 22px 18px;
+      font-size: 0.875rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+    .faq-answer.open {
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .pricing-full-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto 60px; }
+      .compare-table { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🚗</div>
+        <div>
+          <span class="logo-text">Driving School</span>
+      
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Book Now</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+
+<!-- ====== PAGE HERO WITH BANNER IMAGE ====== -->
+<section class="page-hero" style="background-image: url('https://images.pexels.com/photos/15030654/pexels-photo-15030654.jpeg'); background-size: cover; background-position: center;">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="badge"><i class="fas fa-tags"></i> Transparent Pricing</span>
+      <h1>Our <span>Packages</span></h1>
+      <p>No hidden charges. Choose the plan that fits your learning goals and budget.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Pricing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== PRICING PLANS ====== -->
+  <section class="section-padding" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge">Choose Your Plan</span>
+        <h2 class="section-title">Simple, <span>Transparent</span> Pricing</h2>
+        <p class="section-subtitle">Pick the package that suits your schedule and experience level. All plans include certified instructors and dual-control vehicles.</p>
+      </div>
+
+      <div class="pricing-full-grid">
+
+        <!-- BASIC -->
+        <div class="price-full-card animate-on-scroll">
+          <div class="pfc-header">
+            <div class="pfc-icon-wrap">🚀</div>
+            <div class="pfc-name">Basic Plan</div>
+            <div class="pfc-tagline">Perfect for complete beginners</div>
+            <div class="pfc-price">
+              <span class="pfc-currency">Rs.</span>
+              <span class="pfc-amount">5,999</span>
+            </div>
+            <div style="font-size:0.78rem;color:var(--gray);margin-top:6px;">One-time course fee</div>
+          </div>
+          <div class="pfc-body">
+            <div class="pfc-includes-title">What's Included:</div>
+            <ul class="pfc-features-list">
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 10 Driving Sessions (1hr each)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Theory Classes (2 sessions)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Traffic Rules Training</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Parking Techniques</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Certificate of Completion</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 6 Days a Week (flexible timing)</li>
+              <li><span class="pfc-x"><i class="fas fa-times"></i></span> <span class="unavailable">Mock Driving Test</span></li>
+              <li><span class="pfc-x"><i class="fas fa-times"></i></span> <span class="unavailable">License Form Assistance</span></li>
+              <li><span class="pfc-x"><i class="fas fa-times"></i></span> <span class="unavailable">Highway Training</span></li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center;">
+              <i class="fas fa-calendar-check"></i> Enroll in Basic
+            </a>
+          </div>
+        </div>
+
+        <!-- STANDARD - FEATURED -->
+        <div class="price-full-card featured-full animate-on-scroll">
+          <div class="pfc-header">
+            <div class="pfc-popular-badge">⭐ Most Popular</div>
+            <div class="pfc-icon-wrap">⭐</div>
+            <div class="pfc-name">Standard Plan</div>
+            <div class="pfc-tagline">Best value for most learners</div>
+            <div class="pfc-price">
+              <span class="pfc-currency">Rs.</span>
+              <span class="pfc-amount">9,999</span>
+            </div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;">One-time course fee</div>
+          </div>
+          <div class="pfc-body">
+            <div class="pfc-includes-title">What's Included:</div>
+            <ul class="pfc-features-list">
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 20 Driving Sessions (1.5hr each)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Theory Classes (5 sessions)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Traffic Rules + Road Signs</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Advanced Parking</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 1 Mock Driving Test</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> License Form Assistance</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Female Instructor Option</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Certificate of Completion</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Priority WhatsApp Support</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <i class="fas fa-calendar-check"></i> Enroll in Standard
+            </a>
+          </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="price-full-card animate-on-scroll">
+          <div class="pfc-header">
+            <div class="pfc-icon-wrap">💎</div>
+            <div class="pfc-name">Premium Plan</div>
+            <div class="pfc-tagline">Complete training & test package</div>
+            <div class="pfc-price">
+              <span class="pfc-currency">Rs.</span>
+              <span class="pfc-amount">14,999</span>
+            </div>
+            <div style="font-size:0.78rem;color:var(--gray);margin-top:6px;">One-time course fee</div>
+          </div>
+          <div class="pfc-body">
+            <div class="pfc-includes-title">What's Included:</div>
+            <ul class="pfc-features-list">
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 30 Driving Sessions (2hr each)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Full Theory Course (10 sessions)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Traffic Rules + Motorway Laws</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 3 Full Mock Driving Tests</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Highway & Motorway Training</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> License Form Assistance</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Female Instructor (if needed)</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> Pick & Drop Service*</li>
+              <li><span class="pfc-check"><i class="fas fa-check"></i></span> 1-Year Free Refresher</li>
+            </ul>
+            <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center;">
+              <i class="fas fa-calendar-check"></i> Enroll in Premium
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIKE PACKAGES -->
+      <div class="section-header center" style="margin-top:20px;">
+        <span class="badge">Bike Packages</span>
+        <h2 class="section-title">Motorcycle <span>Training</span> Plans</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:60px;">
+        <div style="background:var(--white);border:2px solid var(--border);border-radius:20px;padding:36px;transition:var(--transition);" onmouseover="this.style.borderColor='var(--primary)';this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
+          <div style="display:flex;gap:16px;align-items:center;margin-bottom:20px;">
+            <div style="width:58px;height:58px;background:rgba(230,57,70,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🏍️</div>
+            <div>
+              <div style="font-family:var(--font-heading);font-size:1.1rem;font-weight:800;color:var(--secondary);">Bike Basic</div>
+              <div style="font-size:0.8rem;color:var(--gray);">For beginner riders</div>
+            </div>
+            <div style="margin-left:auto;text-align:right;">
+              <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--secondary);">Rs. 3,999</div>
+            </div>
+          </div>
+          <ul style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><i class="fas fa-check-circle" style="color:var(--primary);margin-top:2px;"></i> 8 Sessions (45 mins each)</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><i class="fas fa-check-circle" style="color:var(--primary);margin-top:2px;"></i> Balance & control training</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><i class="fas fa-check-circle" style="color:var(--primary);margin-top:2px;"></i> Traffic navigation basics</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><i class="fas fa-check-circle" style="color:var(--primary);margin-top:2px;"></i> Safety gear provided</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+        <div style="background:var(--secondary);border:2px solid var(--secondary);border-radius:20px;padding:36px;transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
+          <div style="display:flex;gap:16px;align-items:center;margin-bottom:20px;">
+            <div style="width:58px;height:58px;background:rgba(255,255,255,0.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🏍️</div>
+            <div>
+              <div style="font-family:var(--font-heading);font-size:1.1rem;font-weight:800;color:var(--white);">Bike Advanced</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);">Full bike mastery</div>
+            </div>
+            <div style="margin-left:auto;text-align:right;">
+              <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--white);">Rs. 6,999</div>
+            </div>
+          </div>
+          <ul style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;">
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.85);"><i class="fas fa-check-circle" style="color:#25D366;margin-top:2px;"></i> 15 Sessions (1hr each)</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.85);"><i class="fas fa-check-circle" style="color:#25D366;margin-top:2px;"></i> Advanced cornering & braking</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.85);"><i class="fas fa-check-circle" style="color:#25D366;margin-top:2px;"></i> Highway riding training</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.85);"><i class="fas fa-check-circle" style="color:#25D366;margin-top:2px;"></i> Bike license test prep</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </div>
+
+      <!-- COMPARISON TABLE -->
+      <div class="section-header center">
+        <span class="badge">Compare Plans</span>
+        <h2 class="section-title">Plan <span>Comparison</span></h2>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Basic — Rs.5,999</th>
+              <th style="background:var(--primary);">Standard — Rs.9,999</th>
+              <th>Premium — Rs.14,999</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Driving Sessions</td>
+              <td>10 sessions (1hr)</td>
+              <td class="highlight">20 sessions (1.5hr)</td>
+              <td>30 sessions (2hr)</td>
+            </tr>
+            <tr>
+              <td>Theory Classes</td>
+              <td>2 sessions</td>
+              <td class="highlight">5 sessions</td>
+              <td>10 sessions</td>
+            </tr>
+            <tr>
+              <td>Mock Driving Test</td>
+              <td class="no">✗</td>
+              <td class="highlight yes">✓</td>
+              <td class="yes">✓ (3 times)</td>
+            </tr>
+            <tr>
+              <td>License Form Help</td>
+              <td class="no">✗</td>
+              <td class="highlight yes">✓</td>
+              <td class="yes">✓</td>
+            </tr>
+            <tr>
+              <td>Female Instructor</td>
+              <td class="no">✗</td>
+              <td class="highlight yes">✓</td>
+              <td class="yes">✓</td>
+            </tr>
+            <tr>
+              <td>Highway Training</td>
+              <td class="no">✗</td>
+              <td class="highlight no">✗</td>
+              <td class="yes">✓</td>
+            </tr>
+            <tr>
+              <td>Pick & Drop</td>
+              <td class="no">✗</td>
+              <td class="highlight no">✗</td>
+              <td class="yes">✓*</td>
+            </tr>
+            <tr>
+              <td>Free Refresher</td>
+              <td class="no">✗</td>
+              <td class="highlight no">✗</td>
+              <td class="yes">✓ (1 year)</td>
+            </tr>
+            <tr>
+              <td>Certificate</td>
+              <td class="yes">✓</td>
+              <td class="highlight yes">✓</td>
+              <td class="yes">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.78rem;color:var(--gray);margin-top:12px;">* Pick & Drop available in selected areas only. Contact us for details.</p>
+    </div>
+  </section>
+
+  <!-- ====== FAQs ====== -->
+  <section class="section-padding" style="background:var(--light);">
+    <div class="container" style="max-width:800px;">
+      <div class="section-header center">
+        <span class="badge">FAQs</span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-subtitle">Got questions? We've got answers. If you need more info, just WhatsApp us!</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can I upgrade my plan after starting?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            Yes! You can upgrade from Basic to Standard or Premium at any time by paying the difference. We make it easy and flexible.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Do you offer installment payments?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            Yes, we offer easy 2-installment payment plans for Standard and Premium packages. Contact us for details.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Is a free trial lesson available?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            We offer a discounted first lesson for new students. Contact us to book your first session and meet your instructor before committing to a full package.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What if I fail my test?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            Our pass rate is 98%. However, if you don't pass, Standard and Premium package holders get additional practice sessions at a discounted rate to prepare again.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How long does each package take to complete?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            Basic: 3-4 weeks. Standard: 5-7 weeks. Premium: 8-10 weeks. All timelines depend on your session frequency and availability.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Are female instructors available for all packages?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            Female instructors are available with Standard and Premium packages. Please mention your preference when booking so we can assign the right instructor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA BANNER ====== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Not Sure Which Package to Choose?</h2>
+          <p>Contact us for a free consultation — we'll help you pick the right plan!</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn" style="background:var(--white); color:var(--primary);">
+            <i class="fas fa-phone"></i> Contact Us
+          </a>
+          <a href="https://wa.me/923001234567?text=Hello%2C%20I%20need%20help%20choosing%20a%20package" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text"><span class="licon">🚗</span> Driving School</div>
+          <p>Pakistan's most trusted driving school since 2009. 5,000+ students trained with a 98% pass rate.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Car Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Bike Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Female Instructor</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Test Preparation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-info">
+            <li><div class="ci-icon"><i class="fas fa-phone"></i></div><span>+92 370 1001249</span></li>
+            <li><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><span>Main Kalaboard, Malir, Pakistan</span></li>
+          </ul>
+        </div>
+      </div>
+   
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923001234567?text=Hello%2C%20I%20want%20to%20book%20a%20driving%20lesson" target="_blank" class="whatsapp-float" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    function toggleFaq(el) {
+      const allQuestions = document.querySelectorAll('.faq-question');
+      const allAnswers = document.querySelectorAll('.faq-answer');
+      const answer = el.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      allQuestions.forEach(q => q.classList.remove('active'));
+      allAnswers.forEach(a => a.classList.remove('open'));
+      if (!isOpen) {
+        el.classList.add('active');
+        answer.classList.add('open');
+      }
+    }
+  </script>
+</body>
+</html>

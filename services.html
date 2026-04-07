@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Drive Master Services - Car Driving Lessons, Bike Lessons, Female Instructor, Test Preparation. Professional training in Pakistan."/>
+  <title>Services - Drive Master Driving School</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .services-page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 70px;
+    }
+    .spg-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+    .spg-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .spg-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+    .spg-body {
+      padding: 30px;
+      flex: 1;
+    }
+    .spg-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .spg-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(230,57,70,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .spg-card:hover .spg-icon {
+      background: var(--primary);
+      transform: rotate(5deg);
+    }
+    .spg-header h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    .spg-desc {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .spg-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .spg-list li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .spg-list li i {
+      color: var(--primary);
+      font-size: 0.7rem;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: -12px;
+      width: 24px;
+      height: 2px;
+      background: var(--border);
+    }
+    .process-step:last-child::after {
+      display: none;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 15px rgba(230,57,70,0.3);
+    }
+    .process-step h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+    .process-step p {
+      font-size: 0.78rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .services-page-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .spg-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .process-step::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🚗</div>
+        <div>
+          <span class="logo-text">Driving School</span>
+        
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Book Now</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+
+  <!-- ====== PAGE HERO ====== -->
+<!-- ====== PAGE HERO WITH BANNER IMAGE ====== -->
+<section class="page-hero" style="background-image: url('https://images.pexels.com/photos/15030654/pexels-photo-15030654.jpeg'); background-size: cover; background-position: center;">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="badge"><i class="fas fa-cogs"></i> What We Offer</span>
+      <h1>Our <span>Services</span></h1>
+      <p>Complete driving training programs for every type of learner — beginners to advanced.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Services</span>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ====== SERVICES GRID ====== -->
+  <section class="section-padding" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge">All Services</span>
+        <h2 class="section-title">Comprehensive <span>Training</span> Programs</h2>
+        <p class="section-subtitle">From first-time learners to experienced drivers seeking improvement — we have the right program for you.</p>
+      </div>
+      <div class="services-page-grid">
+
+        <!-- Car Driving Lessons -->
+        <div class="spg-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80" alt="Car Driving Lessons" class="spg-img" loading="lazy"/>
+          <div class="spg-body">
+            <div class="spg-header">
+              <div class="spg-icon">🚗</div>
+              <h3>Car Driving Lessons</h3>
+            </div>
+            <p class="spg-desc">
+              Our most popular service. We offer personalised car driving lessons for complete beginners through to advanced drivers wanting to brush up their skills. All lessons take place in modern dual-control vehicles with certified instructors who adapt to your learning pace.
+            </p>
+            <ul class="spg-list">
+              <li><i class="fas fa-check-circle"></i> Beginner to advanced</li>
+              <li><i class="fas fa-check-circle"></i> Dual-control cars</li>
+              <li><i class="fas fa-check-circle"></i> City & highway driving</li>
+              <li><i class="fas fa-check-circle"></i> Parking techniques</li>
+              <li><i class="fas fa-check-circle"></i> Traffic rules training</li>
+              <li><i class="fas fa-check-circle"></i> Reversing & manoeuvres</li>
+              <li><i class="fas fa-check-circle"></i> Night driving</li>
+              <li><i class="fas fa-check-circle"></i> Defensive driving</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i> Book Car Lessons
+            </a>
+          </div>
+        </div>
+
+        <!-- Bike Lessons -->
+        <div class="spg-card animate-on-scroll">
+          <img src="images/bike lessons.jpg" style="height: 260px;"/>
+          <div class="spg-body">
+            <div class="spg-header">
+              <div class="spg-icon">🏍️</div>
+              <h3>Bike / Motorcycle Lessons</h3>
+            </div>
+            <p class="spg-desc">
+              Learn to ride safely and confidently with our professional motorcycle instructors. Whether you're a complete beginner or want to upgrade your riding skills, our structured program covers everything from basic balance to advanced road riding techniques.
+            </p>
+            <ul class="spg-list">
+              <li><i class="fas fa-check-circle"></i> Complete beginners welcome</li>
+              <li><i class="fas fa-check-circle"></i> Balance & control training</li>
+              <li><i class="fas fa-check-circle"></i> Road safety rules</li>
+              <li><i class="fas fa-check-circle"></i> Traffic navigation</li>
+              <li><i class="fas fa-check-circle"></i> 70cc to 150cc bikes</li>
+              <li><i class="fas fa-check-circle"></i> Safety gear provided</li>
+              <li><i class="fas fa-check-circle"></i> Advanced cornering</li>
+              <li><i class="fas fa-check-circle"></i> Highway riding tips</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i> Book Bike Lessons
+            </a>
+          </div>
+        </div>
+
+        <!-- Female Instructor -->
+        <div class="spg-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1593100126453-19b562a800c1?w=800&q=80" alt="Female Driving Instructor" class="spg-img" loading="lazy"/>
+          <div class="spg-body">
+            <div class="spg-header">
+              <div class="spg-icon">👩‍🏫</div>
+              <h3>Female Instructor Option</h3>
+            </div>
+            <p class="spg-desc">
+              We understand that comfort and privacy matter. Drive Master is proud to offer dedicated female instructors for female learners. Our female instructors are fully certified, experienced, and provide a completely comfortable and supportive learning environment.
+            </p>
+            <ul class="spg-list">
+              <li><i class="fas fa-check-circle"></i> All-female instructor team</li>
+              <li><i class="fas fa-check-circle"></i> Comfortable environment</li>
+              <li><i class="fas fa-check-circle"></i> Fully certified instructors</li>
+              <li><i class="fas fa-check-circle"></i> Flexible schedules</li>
+              <li><i class="fas fa-check-circle"></i> Pick & drop available</li>
+              <li><i class="fas fa-check-circle"></i> Private sessions</li>
+              <li><i class="fas fa-check-circle"></i> Patient instruction style</li>
+              <li><i class="fas fa-check-circle"></i> Same course curriculum</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i> Book Female Instructor
+            </a>
+          </div>
+        </div>
+
+        <!-- Test Preparation -->
+        <div class="spg-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" alt="Driving Test Preparation" class="spg-img" loading="lazy"/>
+          <div class="spg-body">
+            <div class="spg-header">
+              <div class="spg-icon">📋</div>
+              <h3>Driving Test Preparation</h3>
+            </div>
+            <p class="spg-desc">
+              Already driving but need help passing your test? Our dedicated test preparation program is designed to maximise your chances of passing on the first attempt. We simulate real test conditions, coach you on examiner expectations, and cover theory thoroughly.
+            </p>
+            <ul class="spg-list">
+              <li><i class="fas fa-check-circle"></i> Mock test simulation</li>
+              <li><i class="fas fa-check-circle"></i> Theory exam prep</li>
+              <li><i class="fas fa-check-circle"></i> Road sign knowledge</li>
+              <li><i class="fas fa-check-circle"></i> Examiner tips & tricks</li>
+              <li><i class="fas fa-check-circle"></i> NHTS test training</li>
+              <li><i class="fas fa-check-circle"></i> License form help</li>
+              <li><i class="fas fa-check-circle"></i> Test-day guidance</li>
+              <li><i class="fas fa-check-circle"></i> 98% pass rate</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i> Book Test Prep
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Services -->
+      <div style="background:var(--light);border-radius:var(--radius);padding:50px;margin-bottom:0;">
+        <div class="section-header center">
+          <span class="badge">Extra Services</span>
+          <h2 class="section-title">Additional <span>Offerings</span></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+          <div style="background:var(--white);border-radius:var(--radius-sm);padding:26px;box-shadow:var(--shadow);text-align:center;transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:12px;">🛣️</div>
+            <h4 style="font-family:var(--font-heading);color:var(--secondary);margin-bottom:8px;font-size:0.95rem;">Highway Driving</h4>
+            <p style="font-size:0.82rem;color:var(--gray);">Advanced highway & motorway driving lessons for confident long-distance travel.</p>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius-sm);padding:26px;box-shadow:var(--shadow);text-align:center;transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:12px;">🅿️</div>
+            <h4 style="font-family:var(--font-heading);color:var(--secondary);margin-bottom:8px;font-size:0.95rem;">Parking Mastery</h4>
+            <p style="font-size:0.82rem;color:var(--gray);">Parallel, reverse, and bay parking lessons for tight urban environments.</p>
+          </div>
+          <div style="background:var(--white);border-radius:var(--radius-sm);padding:26px;box-shadow:var(--shadow);text-align:center;transition:var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:12px;">🔄</div>
+            <h4 style="font-family:var(--font-heading);color:var(--secondary);margin-bottom:8px;font-size:0.95rem;">Refresher Courses</h4>
+            <p style="font-size:0.82rem;color:var(--gray);">Already have a license but need a confidence boost? Our refresher course is perfect.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="section-padding" style="background:var(--light);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge">Process</span>
+        <h2 class="section-title">How It <span>Works</span></h2>
+        <p class="section-subtitle">Getting started is easy. Just 4 simple steps to begin your driving journey.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step animate-on-scroll">
+          <div class="step-num">1</div>
+          <h4>Contact Us</h4>
+          <p>Call, WhatsApp, or fill out our booking form to get in touch with our team.</p>
+        </div>
+        <div class="process-step animate-on-scroll">
+          <div class="step-num">2</div>
+          <h4>Choose Package</h4>
+          <p>Select the training package that fits your skill level and schedule.</p>
+        </div>
+        <div class="process-step animate-on-scroll">
+          <div class="step-num">3</div>
+          <h4>Start Training</h4>
+          <p>Begin your structured lessons with your assigned certified instructor.</p>
+        </div>
+        <div class="process-step animate-on-scroll">
+          <div class="step-num">4</div>
+          <h4>Pass & Succeed</h4>
+          <p>Take your driving test with confidence and receive your official license!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA BANNER ====== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Start Your Driving Lessons Today!</h2>
+          <p>Book your first lesson in under 2 minutes — no commitment required.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn" style="background:var(--white); color:var(--primary);">
+            <i class="fas fa-calendar-check"></i> Book a Lesson
+          </a>
+          <a href="pricing.html" class="btn btn-outline">
+            <i class="fas fa-tags"></i> View Pricing
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text"><span class="licon">🚗</span> Driving School</div>
+          <p>Pakistan's most trusted driving school since 2009. 5,000+ students trained with a 98% pass rate.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Car Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Bike Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Female Instructor</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Test Preparation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-info">
+            <li><div class="ci-icon"><i class="fas fa-phone"></i></div><span>+92 370 1001249</span></li>
+            <li><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><span>Main Kalaboard, Malir, Pakistan</span></li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923001234567?text=Hello%2C%20I%20want%20to%20book%20a%20driving%20lesson" target="_blank" class="whatsapp-float" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

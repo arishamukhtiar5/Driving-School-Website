@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About Drive Master Driving School - 15+ years experience, certified instructors, 5000+ students trained in Pakistan."/>
+  <title>About Us - Drive Master Driving School</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    /* Fix for centering the about page content */
+    .page-hero {
+      text-align: center;
+    }
+    .page-hero-content {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .page-hero-content h1,
+    .page-hero-content p,
+    .page-hero-content .badge,
+    .page-hero-content .breadcrumb,
+    .page-hero-content .brand-tagline {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .breadcrumb {
+      display: inline-flex;
+      justify-content: center;
+    }
+    .brand-tagline {
+      display: inline-flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🚗</div>
+        <div>
+          <span class="logo-text">Driving School</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Book Now</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+    </div>
+  </nav>
+
+  <!-- ====== PAGE HERO ====== -->
+<!-- ====== PAGE HERO WITH BANNER IMAGE ====== -->
+<section class="page-hero" style="background-image: url('https://images.pexels.com/photos/15030654/pexels-photo-15030654.jpeg'); background-size: cover; background-position: center;">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="badge"><i class="fas fa-flag-checkered"></i> Who We Are</span>
+      <h1>About <span>Driving School</span></h1>
+      <p>Pakistan's most trusted driving school with 15+ years of producing confident, safe drivers.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>About Us</span>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+  <!-- ====== ABOUT STORY SECTION ====== -->
+  <section class="about-story section-padding">
+    <div class="container">
+      <div class="about-full-grid">
+        <div class="about-full-images">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Drive Master Driving School" class="about-full-img-main" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=80" alt="Instructor with student" class="about-full-img-sec" loading="lazy"/>
+          <div class="experience-badge">
+            <div class="exp-num">15+</div>
+            <div class="exp-text">Years of<br/>Excellence</div>
+          </div>
+        </div>
+        <div class="about-full-content">
+          <span class="badge">Our Story</span>
+          <h2 class="section-title">Built on Trust, <span>Driven</span> by Excellence</h2>
+          <p>Founded in 2009 in Lahore, Driving School started with a simple mission — to make every Pakistani driver safe, confident, and responsible on the road.</p>
+          <p>What began as a small school with 3 instructors and 5 vehicles has grown into one of Pakistan's largest and most respected driving training institutes, now operating in 3 major cities with a fleet of 25+ dual-control vehicles.</p>
+          <p>We take pride in our student-first approach. Every training plan is customised to the individual learner's pace, comfort level, and goals. Our instructors are not just certified — they're caring, patient, and dedicated to your success.</p>
+          <div class="about-features" style="margin-top: 28px;">
+            <div class="about-feature">
+              <div class="af-icon"><i class="fas fa-check-circle"></i></div>
+              <div>
+                <h4>NHTS Certified School</h4>
+                <p>Officially recognised by the National Highway & Motorway Police</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="af-icon"><i class="fas fa-award"></i></div>
+              <div>
+                <h4>Award-Winning Instructors</h4>
+                <p>Best Driving Instructors Award — 2021, 2022, 2023</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:26px;">
+            <i class="fas fa-calendar-check"></i> Book a Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== STATS SECTION ====== -->
+  <section style="background:var(--primary); padding: 70px 0;">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box" style="background:rgba(255,255,255,0.12);">
+          <span class="s-num" style="color:var(--white);">5000+</span>
+          <span class="s-label" style="color:rgba(255,255,255,0.7);">Students Trained</span>
+        </div>
+        <div class="stat-box" style="background:rgba(255,255,255,0.12);">
+          <span class="s-num" style="color:var(--white);">15+</span>
+          <span class="s-label" style="color:rgba(255,255,255,0.7);">Years Experience</span>
+        </div>
+        <div class="stat-box" style="background:rgba(255,255,255,0.12);">
+          <span class="s-num" style="color:var(--white);">98%</span>
+          <span class="s-label" style="color:rgba(255,255,255,0.7);">Pass Rate</span>
+        </div>
+        <div class="stat-box" style="background:rgba(255,255,255,0.12);">
+          <span class="s-num" style="color:var(--white);">20+</span>
+          <span class="s-label" style="color:rgba(255,255,255,0.7);">Expert Instructors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MISSION & VISION ====== -->
+  <section class="section-padding" style="background: var(--light);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge">Our Values</span>
+        <h2 class="section-title">Mission, Vision & <span>Values</span></h2>
+        <p class="section-subtitle">Everything we do is guided by our commitment to road safety and student success.</p>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+        <div style="background:var(--white); border-radius:var(--radius); padding:36px 28px; box-shadow:var(--shadow); text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(230,57,70,0.1);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 20px;">🎯</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.15rem;color:var(--secondary);margin-bottom:12px;">Our Mission</h3>
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.8;">To provide world-class driving education that creates safe, responsible, and confident drivers who contribute to safer roads across Pakistan.</p>
+        </div>
+        <div style="background:var(--secondary);border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(255,255,255,0.12);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 20px;">👁️</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.15rem;color:var(--white);margin-bottom:12px;">Our Vision</h3>
+          <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.8;">To become Pakistan's No. 1 driving education institution — expanding to every city and making professional driving training accessible to all.</p>
+        </div>
+        <div style="background:var(--white);border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);text-align:center;">
+          <div style="width:64px;height:64px;background:rgba(230,57,70,0.1);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 20px;">💡</div>
+          <h3 style="font-family:var(--font-heading);font-size:1.15rem;color:var(--secondary);margin-bottom:12px;">Our Values</h3>
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.8;">Safety first, student satisfaction, patience, honesty, and continuous improvement. We treat every student as a member of our Driving school family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TEAM SECTION ====== -->
+  <section class="team section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="badge">Meet the Team</span>
+        <h2 class="section-title">Our Expert <span>Instructors</span></h2>
+        <p class="section-subtitle">Certified, experienced, and passionate about teaching. Meet the people who will guide you.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Instructor Usman Ali" loading="lazy"/>
+          <div class="tc-body">
+            <h4>Usman Ali</h4>
+            <div class="tc-role">Senior Instructor</div>
+            <div class="tc-exp">12 years experience · Car & Highway</div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Instructor Ayesha Khan" loading="lazy"/>
+          <div class="tc-body">
+            <h4>Ayesha Khan</h4>
+            <div class="tc-role">Female Instructor</div>
+            <div class="tc-exp">8 years experience · Female Students</div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Instructor Bilal Ahmed" loading="lazy"/>
+          <div class="tc-body">
+            <h4>Bilal Ahmed</h4>
+            <div class="tc-role">Bike Instructor</div>
+            <div class="tc-exp">10 years experience · Bike & Motorcycle</div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Instructor Sara Iqbal" loading="lazy"/>
+          <div class="tc-body">
+            <h4>Sara Iqbal</h4>
+            <div class="tc-role">Test Prep Specialist</div>
+            <div class="tc-exp">7 years experience · Theory & Test Prep</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY CHOOSE US ====== -->
+  <section class="section-padding" style="background:var(--white);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;">
+        <div>
+          <span class="badge">Why Choose Us?</span>
+          <h2 class="section-title">What Makes Us <span>Different</span></h2>
+          <p style="color:var(--gray); margin-bottom:28px; line-height:1.85;">At Drive Master, we don't just teach driving — we build lifelong road safety habits. Here's why thousands of students choose us:</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:44px;height:44px;background:rgba(230,57,70,0.1);color:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;"><i class="fas fa-car-alt"></i></div>
+              <div>
+                <h4 style="font-size:0.95rem;font-weight:700;color:var(--secondary);margin-bottom:4px;">Dual-Control Vehicles Only</h4>
+                <p style="font-size:0.83rem;color:var(--gray);">All our vehicles have dual controls for maximum safety during lessons.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:44px;height:44px;background:rgba(230,57,70,0.1);color:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;"><i class="fas fa-user-tie"></i></div>
+              <div>
+                <h4 style="font-size:0.95rem;font-weight:700;color:var(--secondary);margin-bottom:4px;">NHTS Certified Instructors</h4>
+                <p style="font-size:0.83rem;color:var(--gray);">All instructors are certified by the National Highway & Motorway Police.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:44px;height:44px;background:rgba(230,57,70,0.1);color:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4 style="font-size:0.95rem;font-weight:700;color:var(--secondary);margin-bottom:4px;">Flexible Scheduling</h4>
+                <p style="font-size:0.83rem;color:var(--gray);">Early morning, daytime, and evening slots 6 days a week to fit your routine.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:44px;height:44px;background:rgba(230,57,70,0.1);color:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;"><i class="fas fa-map-marked-alt"></i></div>
+              <div>
+                <h4 style="font-size:0.95rem;font-weight:700;color:var(--secondary);margin-bottom:4px;">Pick & Drop Service</h4>
+                <p style="font-size:0.83rem;color:var(--gray);">We offer pick-up and drop-off from your home or office in select areas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=700&q=80" alt="Why Choose Drive Master" loading="lazy" style="width:100%;height:420px;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-hover);"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA BANNER ====== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Join the Drive Master Family Today!</h2>
+          <p>5,000+ students trained — Your success story starts here.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn" style="background:var(--white); color:var(--primary);">
+            <i class="fas fa-calendar-check"></i> Book Your Lesson
+          </a>
+          <a href="https://wa.me/923001234567?text=Hello%2C%20I%20want%20to%20learn%20more%20about%20Drive%20Master" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text"><span class="licon">🚗</span> Driving School</div>
+          <p>Pakistan's most trusted driving school since 2009. 5,000+ students trained with a 98% pass rate.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Car Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Bike Lessons</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Female Instructor</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Test Preparation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-info">
+            <li>
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <span>+92 370 1001249<br/>+92 318 0251203</span>
+            </li>
+            <li>
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <span>Main kalaboard,<br/>Malir, Pakistan</span>
+            </li>
+            <li>
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <span>arishamukhtiar303@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/923001234567?text=Hello%2C%20I%20want%20to%20book%20a%20driving%20lesson" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
